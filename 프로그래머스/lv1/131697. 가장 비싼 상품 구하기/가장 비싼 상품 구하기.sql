@@ -1,0 +1,3 @@
+-- 코드를 입력하세요
+
+SELECT PRICE as 'MAX_PRICE' From PRODUCT ORDER BY PRICE DESC limit 1;
