@@ -21,3 +21,8 @@ def solution(sizes):
                 second_max_num = min(sizes[j][0],sizes[j][1])
     answer = max_num * second_max_num
     return answer
+
+# 다른 사람의 풀이
+def solution(sizes):
+    return max(max(x) for x in sizes) * max(min(x) for x in sizes)
+# 미쳤다
