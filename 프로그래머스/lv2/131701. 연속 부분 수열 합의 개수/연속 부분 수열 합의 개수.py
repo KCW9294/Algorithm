@@ -1,9 +1,11 @@
 def solution(elements):
-    answer = []
-    tuning_elements = elements + elements
-    for i in range(1,len(elements)+1):
-        for j in range(len(elements)):
-            answer.append(sum(tuning_elements[j:j+i]))
-            
-    answer = len(set(answer))
-    return answer
+    ll = len(elements)
+    res = set()
+
+    for i in range(ll):
+        ssum = elements[i]
+        res.add(ssum)
+        for j in range(i+1, i+ll):
+            ssum += elements[j%ll]
+            res.add(ssum)
+    return len(res)
