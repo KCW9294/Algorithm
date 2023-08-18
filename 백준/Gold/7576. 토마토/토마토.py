@@ -1,10 +1,7 @@
 from collections import deque
 M,N = map(int,input().split())
 graph = [list(map(int, input().split())) for _ in range(N)]
-max_num = 0
-answer = 0
-x=0
-y=0
+max_num, answer = 0, 0
 deq = deque()
 nx = [1,-1,0,0]
 ny = [0,0,1,-1]
