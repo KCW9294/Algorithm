@@ -3,7 +3,7 @@ def solution(clothes):
     answer = 1
     for cloth in clothes:
         hashlist[hash(cloth[1])] = 0
-        hashkey = hashlist.keys()
+    hashkey = hashlist.keys()
     for cloth in clothes:
         for j in hashkey:
             if hash(cloth[1])==j:
