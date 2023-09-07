@@ -25,11 +25,5 @@ def solution(N, road, K):
     for i in range(1, N+1):
         if distance[i] <= K:
             answer.append(i)
-    print(answer)
-
-    q = []
-    heapq.heappush(q,5)
-    print(q)
-    heapq.heappush(q,1)
-    print(q)
+            
     return len(answer)
