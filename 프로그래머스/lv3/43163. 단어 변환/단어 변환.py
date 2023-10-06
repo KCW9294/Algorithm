@@ -4,26 +4,23 @@ def solution(begin, target, words):
     if target not in words:
         return 0
     else:
-        answer = dfs(begin, target, words, visited)
+        answer = bfs(begin, target, words, visited)
         return answer
     
-        
-def dfs(begin, target, words, visited):
+def bfs(begin, target, words, visited):
     deq = deque()
-    deq.append([begin,0])
+    deq.append((begin,0))
     while deq:
-        word, cnt = deq.popleft()
+        word,cnt = deq.popleft()
         if word == target:
             return cnt
-        for i in range(len(words)):
-            count = 0
-            if visited[i]==1:
-                continue
-            for j in range(len(word)):
-                if word[j]!=words[i][j]:
-                    count += 1
-            if count==1:
-                temp_cnt = cnt+1
-                deq.append([words[i],temp_cnt])
-                visited[i]=1
-                
+        else:
+            for i in range(len(words)):
+                if visited[i] == 0:
+                    temp = 0
+                    for j in range(len(word)):
+                        if word[j] != words[i][j]:
+                            temp += 1
+                    if temp == 1:
+                        deq.append((words[i],cnt+1))
+                        visited[i] = 1
