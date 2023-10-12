@@ -3,12 +3,9 @@ def solution(ingredient):
     temp = []
     for i in range(len(ingredient)):
         temp.append(ingredient[i])
-        if temp[-1]==1 and len(temp)>=4:
-            if temp[-4]==1 and temp[-3]==2 and temp[-2]==3:
+        if temp[-4:] == [1,2,3,1]:
+            answer += 1
+            for j in range(4):
                 temp.pop()
-                temp.pop()
-                temp.pop()
-                temp.pop()
-                answer += 1
             
     return answer
