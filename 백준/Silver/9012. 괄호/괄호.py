@@ -1,6 +1,9 @@
+import sys
+input = sys.stdin.readline
+
 N = int(input())
 
-lst = [input() for _ in range(N)]
+lst = [input().strip() for _ in range(N)]
 
 for PS in lst:
     stack = 0
