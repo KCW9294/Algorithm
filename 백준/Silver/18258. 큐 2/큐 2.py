@@ -2,9 +2,9 @@ import sys
 input = sys.stdin.readline
 from collections import deque
 N = int(input())
+lst = [input().split() for _ in range(N)]
 que = deque()
-for _ in range(N):
-    order = input().split()
+for order in lst:
     if order[0]=='push':
         que.append(order[1])
     elif order[0]=='front':
